@@ -6,12 +6,17 @@ import java.util.Set;
 
 public class Klass {
     private String name;
-    private Set<Student> students = new HashSet<>();
 
-    public Klass() {}
+    @OneToMany
+    private Set<Student> students;
+
+    public Klass() {
+        students = new HashSet<>();
+    }
 
     public Klass(String name) {
         this.name = name;
+        students = new HashSet<>();
     }
 
     public String getName() {
